@@ -28,6 +28,10 @@ startGame();
 restartButton.addEventListener("click", startGame);
 newButton.addEventListener("click", startGame);
 
+
+newButton.addEventListener("click", () => {
+  startGame(); // clears board, keeps score
+});
 function startGame() {
   oTurn = false;
   cells.forEach(cell => {
@@ -46,6 +50,7 @@ function handleClick(e) {
   placeMark(cell, currentClass);
 
   if (checkWin(currentClass)) {
+    updateScore(currentClass);
     endGame(false);
   } else if (isDraw()) {
     endGame(true);
@@ -80,3 +85,16 @@ function checkWin(currentClass) {
   });
 }
 
+function updateScore(winner) {
+  if (winner === "x") {
+    xScore++;
+  } else if (winner === "o") {
+    oScore++;
+  }
+  updateScoreDisplay();
+}
+
+function updateScoreDisplay() {
+  xScoreElement.textContent = xScore;
+  oScoreElement.textContent = oScore;
+}
