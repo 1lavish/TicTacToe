@@ -1,53 +1,168 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #eccfee;
-    
+    justify-content: center;
+    color: #fff;
   }
   
   h1 {
-    margin-top: 30px;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
   }
   
   #game {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    gap: 5px;
-    margin: 30px;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
   }
   
   .cell {
-    width: 100px;
-    height: 100px;
-    background: #fff;
-    border: 2px solid #000;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
     font-size: 2.5rem;
+    color: #fff;
     text-align: center;
-    vertical-align: middle;
     line-height: 100px;
     cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .cell:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
   }
   
   .cell.x {
-    color: red;
+    color: #ff6b6b;
   }
   
   .cell.o {
-    color: blue;
+    color: #4dd0e1;
   }
   
   #winning-message {
+    margin-top: 30px;
     text-align: center;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  #message-text {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  #restart-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #fff;
+    color: #764ba2;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  /* #restart-button:hover {
+    background: #f1f1f1;
+    transform: scale(1.05);
+  } */
+
+  #new-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #fff;
+    color: #764ba2;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
   }
   
   .hidden {
     display: none;
   }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 400px) {
+    #game {
+      grid-template-columns: repeat(3, 80px);
+      grid-template-rows: repeat(3, 80px);
+      gap: 8px;
+    }
+  
+    .cell {
+      width: 80px;
+      height: 80px;
+      font-size: 2rem;
+      line-height: 80px;
+    }
+  
+    #message-text {
+      font-size: 1.5rem;
+    }
+  
+    #restart-button {
+      padding: 8px 20px;
+      font-size: 0.9rem;
+    }
+  }
+  #scoreboard {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 30px;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
 
-  #first{
-    border: 2px solid #000;
-    border-collapse: collapse;
- }
+  .btn {
+    display: flex;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #764ba2;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    /* transition: transform 0.2s, background-color 0.3s; */
+  }
+  
+  .btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  } 

@@ -8,6 +8,11 @@
 </head>
 <body>
   <h1>Tic Tac Toe</h1>
+  <h2><a href="home.html" class="btn">Back To Home</a></h2>
+  <div id="scoreboard">
+    <span>X: <span id="x-score">0</span></span>
+    <span>O: <span id="o-score">0</span></span>
+  </div>
   <div id="game">
     <div class="cell" id = "first" data-cell> </div>
     <div class="cell" id = "second" data-cell></div>
@@ -23,6 +28,10 @@
     <p id="message-text"></p>
     <button id="restart-button">Restart</button>
     <button id="new-button">New Game</button>
+  </div>
+  <div class="mode-buttons">
+    <a href="index.html" class="btn">2 Players</a>
+    <a href="ai.html" class="btn">Play vs Computer</a>
   </div>
   <script src="script.js"></script>
 </body>

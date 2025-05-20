@@ -4,8 +4,14 @@ const winningMessageElement = document.getElementById("winning-message");
 const messageText = document.getElementById("message-text");
 const restartButton = document.getElementById("restart-button");
 const newButton = document.getElementById("new-button");
+const xScoreElement = document.getElementById("x-score");
+const oScoreElement = document.getElementById("o-score");
 
+
+let xScore = 0;
+let oScore = 0;
 let oTurn;
+
 const WINNING_COMBINATIONS = [
   [0, 1, 2],
   [3, 4, 5],
